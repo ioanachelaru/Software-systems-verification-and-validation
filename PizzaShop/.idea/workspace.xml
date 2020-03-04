@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2b755e9-5e0c-4feb-8bf6-9a26b85ae76e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e2b755e9-5e0c-4feb-8bf6-9a26b85ae76e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +14,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pizzashop/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+            <state relative-caret-position="480">
+              <caret line="40" column="85" lean-forward="true" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -61,11 +59,6 @@
             <path>
               <item name="PizzaShop" type="b2602c69:ProjectViewProjectNode" />
               <item name="PizzaShop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PizzaShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PizzaShop" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PizzaShop" type="b2602c69:ProjectViewProjectNode" />
@@ -187,12 +180,12 @@
       <workItem from="1581687743500" duration="1611000" />
       <workItem from="1581852558000" duration="14895000" />
       <workItem from="1582489804321" duration="50000" />
-      <workItem from="1583319365280" duration="1015000" />
+      <workItem from="1583319365280" duration="1322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1015000" />
+    <option name="totallyTimeSpent" value="1322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -283,8 +276,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/pizzashop/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
+        <state relative-caret-position="480">
+          <caret line="40" column="85" lean-forward="true" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
         </state>
       </provider>
     </entry>
