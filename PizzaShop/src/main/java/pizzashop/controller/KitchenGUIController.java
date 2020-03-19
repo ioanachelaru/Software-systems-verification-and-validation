@@ -17,35 +17,30 @@ public class KitchenGUIController {
     @FXML
     public Button ready;
 
-    public static  ObservableList<String> order = FXCollections.observableArrayList();
+    protected static final  ObservableList<String> order = FXCollections.observableArrayList();
     private Object selectedOrder;
     private Calendar now = Calendar.getInstance();
-    private String extractedTableNumberString = new String();
+    private String extractedTableNumberString = "";
     private int extractedTableNumberInteger;
     //thread for adding data to kitchenOrderList
-    public  Thread addOrders = new Thread(new Runnable() {
-        @Override
-        public void run() {
+    private Thread addOrders = new Thread(()-> {
             while (true) {
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        kitchenOrdersList.setItems(order);
-                        }
-                });
+                Platform.runLater(()-> kitchenOrdersList.setItems(order));
                 try {
                     Thread.sleep(100);
-                  } catch (InterruptedException ex) {
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                     break;
                 }
             }
-        }
     });
 
     public void initialize() {
+
         //starting thread for adding data to kitchenOrderList
         addOrders.setDaemon(true);
         addOrders.start();
+
         //Controller for Cook Button
         cook.setOnAction(event -> {
             selectedOrder = kitchenOrdersList.getSelectionModel().getSelectedItem();

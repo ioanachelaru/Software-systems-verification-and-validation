@@ -1,7 +1,6 @@
 package pizzashop;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,40 +27,35 @@ public class Main extends Application {
         PizzaService service = new PizzaService(repoMenu, payRepo);
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/mainFXML.fxml"));
-        //VBox box = loader.load();
         Parent box = loader.load();
         MainGUIController ctrl = loader.getController();
         ctrl.setService(service);
         primaryStage.setTitle("PizeriaX");
         primaryStage.setResizable(false);
         primaryStage.setAlwaysOnTop(false);
-        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent event) {
-                Alert exitAlert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit the Main window?", ButtonType.YES, ButtonType.NO);
+        primaryStage.setOnCloseRequest((WindowEvent event)-> {
+            Alert exitAlert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit the Main window?", ButtonType.YES, ButtonType.NO);
                 Optional<ButtonType> result = exitAlert.showAndWait();
-                if (result.get() == ButtonType.YES){
-                    //Stage stage = (Stage) this.getScene().getWindow();
-                    System.out.println("Incasari cash: "+service.getTotalAmount(PaymentType.Cash));
-                    System.out.println("Incasari card: "+service.getTotalAmount(PaymentType.Card));
+                if(result.isPresent()) {
+                    if (result.get() == ButtonType.YES) {
+                        System.out.println("Incasari cash: " + service.getTotalAmount(PaymentType.CASH));
+                        System.out.println("Incasari card: " + service.getTotalAmount(PaymentType.CARD));
 
-                    primaryStage.close();
-                }
-                // consume event
-                else if (result.get() == ButtonType.NO){
-                    event.consume();
-                }
-                else {
-                    event.consume();
+                        primaryStage.close();
+                    }
+                    // consume event
+                    else if (result.get() == ButtonType.NO) {
+                        event.consume();
+                    } else {
+                        event.consume();
 
+                    }
                 }
-
-            }
         });
         primaryStage.setScene(new Scene(box));
         primaryStage.show();
         KitchenGUI kitchenGUI = new KitchenGUI();
-        kitchenGUI.KitchenGUI();
+        kitchenGUI.kitchenGUI();
     }
 
     public static void main(String[] args) { launch(args);
