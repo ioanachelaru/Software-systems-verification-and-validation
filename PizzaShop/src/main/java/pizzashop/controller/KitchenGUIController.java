@@ -30,7 +30,6 @@ public class KitchenGUIController {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
-                    break;
                 }
             }
     });
