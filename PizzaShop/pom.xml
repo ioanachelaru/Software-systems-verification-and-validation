@@ -39,6 +39,7 @@
       <scope>test</scope>
     </dependency>
 
+
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-base</artifactId>
@@ -88,6 +89,17 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M3</version>
+        <configuration>
+          <!-- include tags -->
+          <groups>integration, feature-168</groups>
+          <!-- exclude tags -->
+          <excludedGroups>slow</excludedGroups>
+        </configuration>
+      </plugin>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
         <version>3.1.0</version>

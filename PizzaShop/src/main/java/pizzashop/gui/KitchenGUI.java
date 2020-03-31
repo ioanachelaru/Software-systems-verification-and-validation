@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.Optional;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -19,7 +20,7 @@ public class KitchenGUI {
         try {
             vBoxKitchen = FXMLLoader.load(getClass().getResource("/fxml/kitchenGUIFXML.fxml"));
         } catch (IOException e) {
-            Logger.getLogger(e.getMessage());
+            Logger.getAnonymousLogger().log(Level.INFO, e.getMessage());
         }
 
         Stage stage = new Stage();
@@ -28,11 +29,11 @@ public class KitchenGUI {
         stage.setOnCloseRequest(event -> {
             Alert exitAlert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit Kitchen window?", ButtonType.YES, ButtonType.NO);
             Optional<ButtonType> result = exitAlert.showAndWait();
-            if (result.get() == ButtonType.YES){
+            if (result.isPresent() && result.get() == ButtonType.YES){
                 stage.close();
             }
             // consume event
-            else if (result.get() == ButtonType.NO){
+            else if (result.isPresent() && result.get() == ButtonType.NO){
                 event.consume();
             }
             else {

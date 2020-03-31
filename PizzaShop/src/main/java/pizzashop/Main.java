@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import pizzashop.controller.MainGUIController;
 import pizzashop.gui.KitchenGUI;
 import pizzashop.model.PaymentType;
@@ -33,24 +32,24 @@ public class Main extends Application {
         primaryStage.setTitle("PizeriaX");
         primaryStage.setResizable(false);
         primaryStage.setAlwaysOnTop(false);
-        primaryStage.setOnCloseRequest((WindowEvent event)-> {
+        primaryStage.setOnCloseRequest(event -> {
             Alert exitAlert = new Alert(Alert.AlertType.CONFIRMATION, "Would you like to exit the Main window?", ButtonType.YES, ButtonType.NO);
-                Optional<ButtonType> result = exitAlert.showAndWait();
-                if(result.isPresent()) {
-                    if (result.get() == ButtonType.YES) {
-                        System.out.println("Incasari cash: " + service.getTotalAmount(PaymentType.CASH));
-                        System.out.println("Incasari card: " + service.getTotalAmount(PaymentType.CARD));
+            Optional<ButtonType> result = exitAlert.showAndWait();
+            if (result.get() == ButtonType.YES){
+                System.out.println("Incasari cash: "+service.getTotalAmount(PaymentType.CASH));
+                System.out.println("Incasari card: "+service.getTotalAmount(PaymentType.CARD));
 
-                        primaryStage.close();
-                    }
-                    // consume event
-                    else if (result.get() == ButtonType.NO) {
-                        event.consume();
-                    } else {
-                        event.consume();
+                primaryStage.close();
+            }
+            // consume event
+            else if (result.get() == ButtonType.NO){
+                event.consume();
+            }
+            else {
+                event.consume();
 
-                    }
-                }
+            }
+
         });
         primaryStage.setScene(new Scene(box));
         primaryStage.show();
