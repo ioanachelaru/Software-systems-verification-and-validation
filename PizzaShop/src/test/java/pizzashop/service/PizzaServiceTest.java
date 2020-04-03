@@ -17,6 +17,7 @@ class PizzaServiceTest {
     static void setUp() {
         MenuRepository menuRepository = new MenuRepository();
         PaymentRepository paymentRepository = new PaymentRepository();
+
         service = new PizzaService(menuRepository, paymentRepository);
         initialLength = service.getPayments().size();
     }
