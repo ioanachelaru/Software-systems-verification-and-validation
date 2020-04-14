@@ -109,4 +109,17 @@ class PizzaServiceTest {
         service.addPayment(1,PaymentType.CARD,dbl);
         assertEquals(initialLength + 1, service.getPayments().size());
     }
+
+    @Test
+    @Tag("WBT")
+    void getTotalAmount_test_valid() {
+        service.addPayment(1,PaymentType.CARD,15.4);
+        assertEquals(initialLength + 1, service.getPayments().size());
+    }
+
+    @Test
+    @Tag("WBT")
+    void getTotalAmount_test_nonvalid() {
+        assertEquals(initialLength, service.getPayments().size());
+    }
 }
