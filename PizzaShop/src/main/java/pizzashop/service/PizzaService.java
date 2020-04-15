@@ -44,9 +44,8 @@ public class PizzaService {
         return total;
     }
 
-    public double getTotalAmount_test(PaymentType type) {
+    public double getTotalAmount_test(List<Payment> l, PaymentType type) {
         double total = 0.0f;
-        List<Payment> l = getPayments();
         if (l == null) return total;
         if(l.isEmpty()) return total;
         for (int i=0; i < l.size(); i++) {
@@ -56,7 +55,4 @@ public class PizzaService {
         }
         return total;
     }
-
-
-
 }
