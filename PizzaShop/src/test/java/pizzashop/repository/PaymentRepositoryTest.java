@@ -1,4 +1,4 @@
-package pizzashop.repository;
+package java.pizzashop.repository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

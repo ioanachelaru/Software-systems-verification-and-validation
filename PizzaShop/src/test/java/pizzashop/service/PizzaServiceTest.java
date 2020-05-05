@@ -1,4 +1,4 @@
-package pizzashop.service;
+package java.pizzashop.service;
 
 import com.sun.org.glassfish.gmbal.Description;
 import org.junit.jupiter.api.*;

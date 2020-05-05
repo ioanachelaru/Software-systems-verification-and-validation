@@ -1,4 +1,4 @@
-package pizzashop.integration;
+package java.pizzashop.integration;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
