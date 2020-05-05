@@ -1,6 +1,6 @@
 package service;
 
-import com.sun.org.glassfish.gmbal.Description;
+
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -121,7 +121,6 @@ class PizzaServiceTest {
 
     @Test
     @Tag("WBT")
-    @Description("Decision_coverage, All_paths_coverage")
     void list_null(){
         payments = null;
         assert(service.getTotalAmount_test(payments,PaymentType.CARD) == 0.0);
@@ -129,7 +128,6 @@ class PizzaServiceTest {
 
     @Test
     @Tag("WBT")
-    @Description("Decision_coverage, Loop_coverage All_paths_coverage")
     void list_empty(){
         payments = new ArrayList<>();
         assert(service.getTotalAmount_test(payments,PaymentType.CARD) == 0.0);
@@ -137,8 +135,7 @@ class PizzaServiceTest {
 
     @Test
     @Tag("WBT")
-    @Description("Decision_coverage, Statement_coverage, Loop_coverage, All_paths_coverage")
-    void list_with_one_element(){
+     void list_with_one_element(){
         payments = new ArrayList<>();
         payments.add(new Payment(1,PaymentType.CARD,12.3));
         assert(service.getTotalAmount_test(payments,PaymentType.CARD) == 12.3);
@@ -146,7 +143,6 @@ class PizzaServiceTest {
 
     @Test
     @Tag("WBT")
-    @Description("Loop_Coverage")
     void loopCoverage_2_executions(){
         payments = new ArrayList<>();
         for(int i = 0; i < 2; i++)
@@ -156,7 +152,6 @@ class PizzaServiceTest {
 
     @Test
     @Tag("WBT")
-    @Description("All_paths_coverage")
     void allPathCoverage_no_payment_found(){
         payments=new ArrayList<>();
         payments.add(new Payment(1,PaymentType.CASH,12.3));
