@@ -1,4 +1,4 @@
-package java.pizzashop.service;
+package service;
 
 import com.sun.org.glassfish.gmbal.Description;
 import org.junit.jupiter.api.*;
@@ -8,6 +8,7 @@ import pizzashop.model.Payment;
 import pizzashop.model.PaymentType;
 import pizzashop.repository.MenuRepository;
 import pizzashop.repository.PaymentRepository;
+import pizzashop.service.PizzaService;
 
 import java.util.ArrayList;
 import java.util.List;

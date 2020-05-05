@@ -1,4 +1,4 @@
-package java.pizzashop.integration;
+package integration;
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;

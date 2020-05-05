@@ -1,4 +1,4 @@
-package java.pizzashop.repository;
+package repository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,15 +8,14 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import pizzashop.model.Payment;
 import pizzashop.model.PaymentType;
+import pizzashop.repository.PaymentRepository;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-
 class PaymentRepositoryTest {
     private @Mock List<Payment> paymentList;
-    private @InjectMocks PaymentRepository repository;
+    private @InjectMocks
+    PaymentRepository repository;
 
     @BeforeEach
     void setUp() {
