@@ -18,6 +18,9 @@ public class PaymentRepository {
         this.paymentList = new ArrayList<>();
         readPayments();
     }
+    public  PaymentRepository(List<Payment> payments){
+        this.paymentList = payments;
+    }
 
     private void readPayments() {
         ClassLoader classLoader = PaymentRepository.class.getClassLoader();
@@ -45,9 +48,14 @@ public class PaymentRepository {
         return item;
     }
 
-    public void add(Payment payment) {
+    public Payment add(Payment payment) {
         paymentList.add(payment);
         writeAll();
+        return payment;
+    }
+
+    public void add_payment(Payment payment) throws NullPointerException{
+        paymentList.add(payment);
     }
 
     public List<Payment> getAll() {

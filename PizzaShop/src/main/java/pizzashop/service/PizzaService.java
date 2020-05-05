@@ -26,6 +26,10 @@ public class PizzaService {
         return payRepo.getAll();
     }
 
+    public void add_new_payment(Payment p){
+        this.payRepo.add(p);
+    }
+
     public void addPayment(int table, PaymentType type, double amount) {
         if (table > 0 && table < 9 && amount > 0) {
             Payment payment = new Payment(table, type, amount);
