@@ -109,12 +109,11 @@ class PizzaServiceTest {
 
     //BVA - Valid: amount > 0
     //ECP - Valid: amount > 0
-    @ParameterizedTest
-    @ValueSource(doubles = { 0.001, 102.5})
+    @Test
     @DisplayName("ParameterizedTest")
     @Tags({@Tag("BVA"),@Tag("ECP")})
-    void amountValid_BVA_ECP_amount_ok(Double dbl) {
-
+    void amountValid_BVA_ECP_amount_ok() {
+        double dbl = 102.5;
         service.addPayment(1,PaymentType.CARD,dbl);
         assertEquals(initialLength + 1, service.getPayments().size());
     }
