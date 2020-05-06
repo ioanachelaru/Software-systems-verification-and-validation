@@ -114,11 +114,6 @@
   </dependencies>
 
   <build>
-    <testResources>
-      <testResource>
-        <directory>src/test</directory>
-      </testResource>
-    </testResources>
     <testSourceDirectory>src/test</testSourceDirectory>
     <plugins>
       <plugin>
